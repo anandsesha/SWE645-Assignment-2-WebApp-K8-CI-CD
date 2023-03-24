@@ -1,7 +1,7 @@
 # SWE645-Assignment-2-WebApp-K8-CI-CD
 Containerized - Kubernetes Deployment - Complete CI/CD Pipline
 
-Objectives of this assignment:
+# Objectives of this assignment:
 
 • Containerize the Web application you developed in Homework 1 – Part 2, using
 Docker container technology.
