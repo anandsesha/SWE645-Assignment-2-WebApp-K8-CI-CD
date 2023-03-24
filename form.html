@@ -1,0 +1,195 @@
+<!-- 
+Created by: Anand Seshadri
+GMU ID: G01351350 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/media/stylesheets/form-style.css" />
+    <title>Application</title>
+  </head>
+  <body class="container">
+    <!-- Survey Header -->
+    <header class="flex">
+      <div class="header">
+        <h3>Students survey form</h3>
+         <!-- Required Info Notification -->
+        <h6>
+          (Required Fields are indiacated by a
+          <span class="star">*</span>
+          mark)
+        </h6>
+      </div>
+      <nav class="header-navbar">
+        <a href="./index.html">Home</a>
+      </nav>
+    </header>
+    <main>
+      <form action="index.html" method="post">
+        <fieldset>
+          <!-- Text boxes for first name, last name, street address, city, state, zip, telephone number, e-mail, 
+            and date of survey, which are required fields. -->
+          <div>
+            <label for="name">Name : <span class="star">*</span></label>
+            <input
+              class="form-control"
+              id="name"
+              type="text"
+              name="fname"
+              placeholder="First Name"
+              autofocus
+              required
+            />
+            <input
+              class="form-control"
+              id="name"
+              type="text"
+              name="lname"
+              placeholder="Last Name"
+              required
+            />
+          </div>
+          <div>
+            <label for="Address">Address : <span class="star">*</span></label>
+            <input
+              class="form-control"
+              id="Street"
+              type="Address"
+              placeholder="Street"
+              required
+            />
+            <input
+              class="form-control"
+              id="City"
+              type="Address"
+              placeholder="City"
+              required
+            />
+            <input
+              class="form-control"
+              id="State"
+              type="Address"
+              placeholder="State"
+              required
+            />
+            <input
+              class="form-control"
+              id="Zipcode"
+              type="number"
+              placeholder="Zipcode"
+              required
+            />
+          </div>
+          <div>
+            <label for="contact">Contact : <span class="star">*</span></label>
+            <input
+              class="form-control"
+              id="Email"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+            <input
+              class="form-control"
+              id="Phone-Number"
+              type="number"
+              name="phone"
+              placeholder="Phone-Number"
+              required
+            />
+          </div>
+          <div>
+            <label for="DOS">Date of servey : <span class="star">*</span></label>
+            <input
+              class="form-control"
+              id="DOS"
+              type="date"
+              name="DOS"
+              required
+            />
+          </div>
+          <!--Checkboxes that allow prospective students to indicate what they liked most about the campus. 
+            The checkboxes should include: students, location, campus, atmosphere, dorm rooms, and sports.  -->
+          <div class="checkbox">
+            <label>what you liked most about the campus?</label>
+            <input id="students" type="checkbox" placeholder="v" />
+            <label for="students">students</label>
+            <input id="location" type="checkbox" placeholder="w" />
+            <label for="location">location</label>
+            <input id="campus" type="checkbox" placeholder="x" />
+            <label for="campus">campus</label>
+            <input id="atmosphere" type="checkbox" placeholder="y" />
+            <label for="atmosphere">atmosphere</label>
+            <input id="dorm rooms" type="checkbox" placeholder="z" />
+            <label for="dorm rooms">dorm rooms</label>
+            <input id="sports" type="checkbox" placeholder="A" />
+            <label for="sports">sports</label>
+          </div>
+          <!-- Radio buttons that allow the prospective students to indicate how they became interested in the
+             university. Options should include: friends, television, Internet, and other. -->
+          <div class="radio">
+            <label>How did you become interested in the university</label>
+            <input name="Radio" id="Friends" type="radio" />
+            <label for="Friends">Friends</label>
+            <input name="Radio" id="Television" type="radio" />
+            <label for="Television">Television</label>
+            <input name="Radio" id="Internet" type="radio" />
+            <label for="Internet">Internet</label>
+            <input name="Radio" id="Other" type="radio" />
+            <label for="Other">Other</label>
+          </div>
+          <!-- A dropdown list of options for the user to select the likelihood of him/her recommending this school to
+             other prospective students. The three options of the dropdown list are: Very Likely, Likely, Unlikely. -->
+          <div>
+            <label for="recommend"
+              >How likely would you recommending this school</label
+            >
+            <select class="form-control" name="recommend" id="">
+              <option value="">Very Likely</option>
+              <option value="">Likely</option>
+              <option value="">Unlikely</option>
+            </select>
+          </div>
+
+          <!-- An additional text box called Raffle. The user will be asked to enter at least ten comma separated 
+            numbers ranging from 1 through100 in the Raffle field. This information will be used to announce 
+            whether the student wins a free movie ticket. -->
+          <div>
+            <label for="Raffle"
+              >Enter at least ten comma separated numbers ranging from 1
+              through100 in the Raffle field</label
+            >
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Raffle"
+              name="Raffle"
+            />
+          </div>
+
+          <!-- A text area for additional comments -->
+          <div>
+            <textarea
+              class="form-control"
+              name="Comments"
+              placeholder="Comments"
+              id="Comments"
+              cols="40"
+              rows="5"
+            ></textarea>
+          </div>
+          <!-- Submit and cancel buttons -->
+          <div class="flex">
+            <button type="submit">Submit</button>
+            <button type="reset">Cancel</button>
+          </div>
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>

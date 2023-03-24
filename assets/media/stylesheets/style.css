@@ -1,0 +1,289 @@
+/*
+Created by: Anand Seshadri
+GMU ID: G01351350
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* CUSTOM STYLES*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  --background: rgb(255, 255, 255);
+  --primary: rgb(255, 106, 0);
+  --secondary: rgb(0, 0, 0);
+  --tertiary: rgb(156, 153, 153);
+}
+main{
+  height: 100vh;
+}
+.landing-body {
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1.5;
+  font-size: 16px;
+  height: 100vh;
+  background-color: var(--secondary);
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(156, 153, 153),
+    rgba(254, 154, 83)
+  );
+  /* color: var(--background); */
+  height: 100%;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header, .footer{
+  background-image: linear-gradient(to top right, rgba(0, 0, 0, 1),
+  rgb(234, 96, 5));
+  border: 0.5px solid black;
+}
+h1,
+h3,
+h4 {
+  color: var(--secondary);
+}
+.intro-heading {
+  font-size: 48px;
+  font-weight: 700;
+  padding: 10px 0;
+  color: var(--background);
+  text-shadow: 2px 2px rgb(254, 154, 83);
+}
+h2 {
+  /* background-image: linear-gradient(
+    to right,
+    rgb(156, 153, 153),
+    rgb(254, 154, 83)
+  ); */
+  color: var(--background);
+  text-shadow: 3px rgb(255, 106, 0);
+  font-size: 32px;
+  font-weight: 600;
+  margin: 10px 20px;
+  padding: 8px;
+  border-radius: 20px;
+}
+header {
+  /* background-color: var(--primary); */
+  padding: 0.6rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.nav-bar a {
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 24px;
+  margin-right: 45px;
+  color: var(--background);
+  border: solid 1px var(--background);
+  border-radius: 10px;
+}
+.nav-bar a:hover {
+  text-decoration: none;
+  padding: 5px 20px;
+  color: var(--secondary);
+}
+.img {
+  margin: 4rem;
+  width: 100%;
+  border-radius: 8px;
+  border: 3px solid rgb(254, 154, 83);
+  height: 450px;
+  object-fit: cover;
+}
+article p {
+  padding-bottom: 20px;
+}
+.footer {
+  height: 2rem;
+  /* position: fixed; */
+  width: 100%;
+  bottom: 0;
+  /* background-image: linear-gradient(
+    to right,
+    rgb(237, 102, 5),
+    rgb(0, 0, 0),
+    rgb(237, 102, 5)
+  ); */
+  /* background-image: linear-gradient(
+    to right,
+    rgb(254, 154, 83),
+    rgb(156, 153, 153)
+  ); */
+  background-color: var(--primary);
+  color: var(--background);
+  text-align: center;
+}
+ol label{
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+ol li {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding: 0.5rem 0 0.5rem 1rem;
+}
+
+
+/* Error Page styles */
+.error-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--background);
+  font-size: 4rem;
+  height: 100vh;
+  /* background-color: var(--primary); */
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(156, 153, 153),
+    rgba(231, 116, 35)
+  );
+}
+.error-header{
+  background-image: linear-gradient(to top right, rgba(0, 0, 0, 1),
+  rgb(234, 96, 5));
+  border: 0.5px solid black;
+}
+.center {
+  text-align: center;
+}
