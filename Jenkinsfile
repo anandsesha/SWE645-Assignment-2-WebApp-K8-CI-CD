@@ -14,7 +14,7 @@ agent any
             steps {
                 script {
                     sh 'rm -rf *.war'
-                    sh 'jar -cvf swe-645-assignment-1.war -C src/main/webapp .'
+                    sh 'jar -cvf swe-645-assignment-1.war .'
                     docker.withRegistry('',registryCredential){
                       def img = docker.build('anandseshadrii/studentsurvey645:'+ dateTag)
                    }
