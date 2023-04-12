@@ -1,36 +1,32 @@
-@NonCPS
-def generateTag() {
-    return "build-" + new Date().format("yyyyMMdd-HHmmss")
-}
+//This file with create a CI/CD pipeline for building and deploying the dcoker image to k8 cluster using Github as source control version.
 
-pipeline {
+pipeline{
+    
     environment {
-        registry = "anandseshadrii/studentsurvey645"
+
+	    	registry = "anandseshadrii/studentsurvey645"
         registryCredential = 'dockercred'
-    }
-    agent any
-
-    stages{
-
-        stage('Build') {
+        def dateTag = new Date().format("yyyyMMdd-HHmmss")
+	}
+agent any
+  stages{
+    stage('Building war') {
             steps {
                 script {
-                    sh 'mvn clean package'
-                    sh 'echo ${BUILD_TIMESTAMP}'
-                    tag = generateTag()
+                    sh 'rm -rf *.war'
+                    sh 'jar -cvf swe-645-assignment-1.war -C src/main/webapp .'
                     docker.withRegistry('',registryCredential){
-                      def customImage = docker.build("anandseshadrii/studentsurvey645:"+tag)
+                      def img = docker.build('anandseshadrii/studentsurvey645:'+ dateTag)
                    }
+                    
                }
             }
         }
-
-        stage('Push to Docker Hub') {
+    stage('Pushing latest code to Docker Hub') {
             steps {
                 script {
-                    sh 'echo ${BUILD_TIMESTAMP}'
                     docker.withRegistry('',registryCredential) {
-                        def image = docker.build('anandseshadrii/studentsurvey645:'+tag, '.')
+                        def image = docker.build('anandseshadrii/studentsurvey645:'+ dateTag, '. --no-cache')
                         docker.withRegistry('',registryCredential) {
                             image.push()
                         }
@@ -38,23 +34,19 @@ pipeline {
                 }
             }
         }
-
-      stage('Deploying Rancher to single node') {
+     stage('Deploying to single node in Rancher') {
          steps {
             script{
-               sh 'kubectl set image deployment/surveyform container-0=anandseshadrii/studentsurvey645:'+tag
+               sh 'kubectl set image deployment/surveyform container-0=anandseshadrii/studentsurvey645:'+dateTag
+               sh 'kubectl set image deployment/surveyformlb container-0=anandseshadrii/studentsurvey645:'+dateTag
             }
          }
       }
-
-    stage('Deploying Rancher to Load Balancer') {
-       steps {
-          script{
-             sh 'kubectl set image deployment/surveyformlb container-0=anandseshadrii/studentsurvey645:'+tag
-          }
-       }
-    }
-
-
-    }
+  }
+ 
+  post {
+	  always {
+			sh 'docker logout'
+		}
+	}    
 }
