@@ -18,35 +18,6 @@ Jenkins for automated build and for the automated deployment of your application
 on Kubernetes
 
 
-
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Codespaces
-Marketplace
-Explore
- 
-@anandsesha 
-pranay-sharma793
-/
-CS-645-Assignment
-Public
-Fork your own copy of pranay-sharma793/CS-645-Assignment
-Code
-Issues
-Pull requests
-Actions
-Projects
-Security
-Insights
-CS-645-Assignment/ReadMe.md
-@pranay-sharma793
-pranay-sharma793 readme updated
-Latest commit aa100fa 3 days ago
- History
- 1 contributor
-50 lines (37 sloc)  3.11 KB
  
 
 ### Refer to the Instructions file for extended installation steps and supported screenshots.
