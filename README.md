@@ -70,18 +70,4 @@ https://gmuedu-my.sharepoint.com/:v:/g/personal/mraval_gmu_edu/EYuFnHbuHh1Bh1Tjc
 - Configure the pipeline, with source as the github repo. Polling the SCM every minute and provide access to JenkinsFile stored in github repo.
 - Created and push ‘JenkinsFile’ consisting of stages which include, a. Build. b. Push to docker hub. c. Deploy on Rancher single node. d. Deploy on rancher
 - Once the pipeline is successfully setup. Make any change to the code and push it to GitHub it keeps polling SCM and triggers a new build. Once all the steps are completed. See the new build is pushed to docker hub and the image in also updated in Rancher deployments, now hosting the newly created build.
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-CS-645-Assignment/ReadMe.md at main · pranay-sharma793/CS-645-Assignment 
+
